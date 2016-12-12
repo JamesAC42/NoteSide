@@ -51,7 +51,7 @@
 					<div class="card light-blue darken-4 z-depth-3">
 						<div class="card-content white-text">
 							<span class="card-title">Login</span>
-							<p>Please enter your information</p>
+							<p>Please enter your information.</p>
 						</div>
 						<div class="card-action">
 							<a href="/createaccount">Sign Up</a>
