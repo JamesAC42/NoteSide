@@ -52,10 +52,14 @@
 						<div class="card-content white-text">
 							<span class="card-title">Login</span>
 <<<<<<< HEAD
+<<<<<<< HEAD
 							<p>Please enter 
 your information.</p>
 =======
 							<p>Please enter your information.</p>
+>>>>>>> dev
+=======
+							<p>Please enter your information</p>
 >>>>>>> dev
 						</div>
 						<div class="card-action">

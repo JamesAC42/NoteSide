@@ -1,6 +1,6 @@
 <?php 
 	session_start();
-	include 'hidden/config.php'; 
+	include '../.htpasswds/config.php'; 
 ?><head>
 	<title>NoteSide</title>
 	<!--Import Google Icon Font-->
