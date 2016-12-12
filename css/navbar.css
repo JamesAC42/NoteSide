@@ -1,0 +1,172 @@
+.navbar-div{
+
+	background-color:#2183B1;
+
+	width:100vw;
+
+	margin-left:-10px;
+
+	height:42px;
+
+	margin-top:-18px;
+
+	padding:10px;
+
+	padding-bottom:5px;
+
+	position:fixed;
+
+	z-index:10;
+
+}
+
+.navbar{
+
+	list-style-type: none;
+
+	margin:0;
+
+	padding:0;
+
+	background-color:#2183B1;
+
+}
+
+.navbar li{
+
+	height:10px;
+
+	line-height:30px;
+
+}
+
+.left li{
+
+	float:left;
+
+}
+
+.right li{
+
+	float:right;
+
+}
+
+.navbar li a{
+
+	display:block;
+
+	color:#E3F7FF;
+
+	text-align:center;
+
+	padding:10px 40px;
+
+	margin-top:-3px;
+
+	font-family:'Ubuntu',sans-serif;
+
+	font-size:22px;
+
+	text-decoration: none;
+
+	background-color: #2183B1;
+
+	transition: all 0.3s ease-in-out;
+
+}
+
+#create-btn{
+	margin-left:-1px;
+	display:block;
+	text-align:center;
+	line-height:15px;
+	background-color:#6BEEE9;
+	border-radius:20px;
+	color:#13278D;
+	font-size:25px;
+	margin-top:2px;
+	transition: all 0.3s ease-in-out;
+	padding: 14px 10px;
+	-webkit-box-shadow: -3px 4px 18px -4px rgba(0,0,0,0.52);
+	-moz-box-shadow: -3px 4px 18px -4px rgba(0,0,0,0.52);
+	box-shadow: -3px 4px 18px -4px rgba(0,0,0,0.52);
+}
+
+.navbar li a:hover{
+
+	color:#0E5887;
+
+}
+
+#create-btn:hover{
+	background-color:#0A45C9;
+	color:#9DE2FC;
+	-webkit-box-shadow: -8px 8px 18px -4px rgba(0,0,0,0.52);
+	-moz-box-shadow: -8px 8px 18px -4px rgba(0,0,0,0.52);
+	box-shadow: -8px 8px 18px -4px rgba(0,0,0,0.52);
+}
+
+#nav-header{
+
+	font-size:40px;
+
+}
+
+.icon{
+
+	display:none;
+
+}
+
+
+
+@media (max-width:950px) {
+
+  ul.right li {display: none;}
+
+  ul.right li.icon {
+
+    float: right;
+
+    display: inline-block;
+
+  }
+
+}
+
+
+
+@media (max-width:950) {
+
+  ul.navbar.responsive {
+
+  	position: fixed;
+
+  	height:100vh;
+
+  	right:0;
+
+  	top:0;
+
+  	bottom:0;
+
+  }
+
+  ul.navbar.responsive li {
+
+    float: none;
+
+    display: inline;
+
+  }
+
+  ul.navbar.responsive li a {
+
+    display: block;
+
+    text-align: right;
+
+  }
+
+}

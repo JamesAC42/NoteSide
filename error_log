@@ -1,0 +1,2 @@
+[19-Sep-2016 22:30:55 UTC] PHP Fatal error:  Call to undefined function password_hash() in /home/jcrovo2019/public_html/hidden/createaccountcode.php on line 38
+[19-Sep-2016 22:35:43 UTC] PHP Fatal error:  Call to undefined function password_hash() in /home/jcrovo2019/public_html/hidden/createaccountcode.php on line 38

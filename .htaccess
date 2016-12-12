@@ -1,0 +1,12 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^/?note/([0-9]+)$ /note.php?id=$1
+RewriteRule ^/?edit/([0-9]+)$ /edit.php?note=$1
+
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.php -f 
+RewriteRule ^(.*)$ $1.php
+
+RewriteCond %{SCRIPT_FILENME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^user/(.*)$ userpage.php?user=$1

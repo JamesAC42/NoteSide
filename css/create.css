@@ -1,0 +1,12 @@
+#content {
+	width:90vw;
+	margin:0 auto;
+}
+
+textarea {
+	font-family: 'David Libre', serif;
+	font-size: 23px;
+	resize: vertical;
+	height: 120vh;
+	padding: 24px;
+}
