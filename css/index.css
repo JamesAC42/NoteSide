@@ -107,9 +107,9 @@ body {
 
 .note-container:hover, .signup-btn:hover{
   transform: scale(1.02, 1.02);
-  -webkit-box-shadow: 1px 12px 87px -9px rgba(93,110,128,0.99);
+  /*-webkit-box-shadow: 1px 12px 87px -9px rgba(93,110,128,0.99);
   -moz-box-shadow: 1px 12px 87px -9px rgba(93,110,128,0.99)
-  box-shadow: 1px 12px 87px -9px rgba(93,110,128,0.99);
+  box-shadow: 1px 12px 87px -9px rgba(93,110,128,0.99);*/
 }
 
 @media (max-width: 950px) {
