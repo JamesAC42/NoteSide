@@ -9,8 +9,7 @@
 		$now = time();		
 		if($now > $_SESSION['expire']){			
 			header('location:/logout.php'); exit();		
-		}else{						
-			include 'hidden/config.php';			
+		}else{								
 			$username = $_SESSION['loginuser'];			
 			$sql = "SELECT * FROM ns_users WHERE username='$username';";			
 			$userinfo = mysql_query($sql);			
