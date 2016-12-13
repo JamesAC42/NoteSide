@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'hidden/config.php';
+include '../.htpasswds/config.php'; 
 if(empty($_GET)){
 	header('location:/');
 }else{

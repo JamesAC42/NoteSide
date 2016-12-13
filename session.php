@@ -1,7 +1,7 @@
 <?php
 	session_set_cookie_params(0, "/"); 
 	session_start();
-	include 'hidden/config.php';
+	include '../.htpasswds/config.php'; 
 	
 	if(!isset($_SESSION["loginuser"])){
 		header('location:/login'); exit();

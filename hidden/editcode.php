@@ -1,6 +1,6 @@
 <?php
 include 'session.php';
-include 'hidden/config.php';
+include '../.htpasswds/config.php'; 
 require 'hidden/password.php';
 $error = "";
 

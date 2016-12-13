@@ -2,7 +2,7 @@
 	session_set_cookie_params(0, "/"); 
 	session_start(); 
 	include 'Parsedown.php';
-	include 'hidden/config.php';
+	include '../.htpasswds/config.php'; 
 	require 'hidden/password.php';
 	if(isset($_GET['id'])) {
 		$noteid = htmlspecialchars($_GET['id']);

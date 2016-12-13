@@ -1,6 +1,6 @@
 <?php
 	include 'session.php';
-	include 'hidden/config.php';
+	include '../.htpasswds/config.php'; 
 	$classerror = "Add class";
 	$teachererror = "Add teacher";
 	$classmateerror = "Add classmate";

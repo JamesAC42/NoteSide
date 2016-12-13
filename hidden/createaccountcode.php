@@ -1,7 +1,7 @@
 <?php
 	session_set_cookie_params(0, "/"); 
 	session_start();
-	include 'hidden/config.php';
+	include '../.htpasswds/config.php'; 
 	require 'hidden/password.php';
 	$error = "";
 	$myusername = "";
