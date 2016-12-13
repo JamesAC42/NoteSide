@@ -20,6 +20,7 @@
 	  ga('send', 'pageview');
 	</script>
 </head>
+
 <body>
 <?php include "navbar.php"; ?>
 <div class="sidebar-wrapper" id="counter-wrapper">
