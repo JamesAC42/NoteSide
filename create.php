@@ -3,11 +3,11 @@
 	<meta author="jamesac">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Dosis|Eczar|Share+Tech+Mono|Ubuntu|Ubuntu+Mono" rel="stylesheet">
-	<script src="/js/wordcount.js"></script>
+	<script src="./js/wordcount.js"></script>
 	<title>Create Note</title>
-	<link href="/css/textarea.css" rel="stylesheet">
-	<link href="/css/navbar.css" rel="stylesheet">
-	<script src="/js/navbar.js"></script>
+	<link href="./css/textarea.css" rel="stylesheet">
+	<link href="./css/navbar.css" rel="stylesheet">
+	<script src="./js/navbar.js"></script>
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<script>
