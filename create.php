@@ -202,6 +202,6 @@
 	</div>
 	<textarea name="note-content" id="text_area" form="submit-note" required></textarea>
 </div>
-<script src="/js/edittextarea.js"></script>
-<script src="/js/textarea.js"></script>
+<script src="./js/edittextarea.js"></script>
+<script src="./js/textarea.js"></script>
 </body>
