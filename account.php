@@ -1,4 +1,4 @@
-<?php include 'hidden/accountcode.php';?><head>
+<?php include './hidden/accountcode.php';?><head>
 	<title>My Account</title>
 	<!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
