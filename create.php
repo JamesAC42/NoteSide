@@ -5,7 +5,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Dosis|Eczar|Share+Tech+Mono|Ubuntu|Ubuntu+Mono" rel="stylesheet">
 	<script src="/js/wordcount.js"></script>
 	<title>Create Note</title>
-	<link href="/css/textarea.css" rel="stylesheet">
+	<link href="./css/textarea.css" rel="stylesheet">
 	<link href="/css/navbar.css" rel="stylesheet">
 	<script src="/js/navbar.js"></script>
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
