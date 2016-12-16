@@ -25,6 +25,18 @@ function buttonConfirm(button, text){
 		});
 	})
 }
+var windows = ['#counter-window','#help-window','#info-window'];
+function showWindow(window_id){
+	for(var ws in windows){
+		if(ws == window_id){
+			$(ws).css("display","initial");
+			console.log(window_id);
+		}else{
+			$(ws).css("display","none");
+			console.log(window_id);
+		}
+	}
+}
 function save(manual){
 	if(manual =='manual'){
 		buttonConfirm("#save-button","Saved!");
@@ -238,7 +250,21 @@ $(document).ready(function(){
 	}).mouseup(function(){
 		$(this).css({"margin-top":"-=5px"});
 	})
-
+	$("#counter-tab").click(function(){
+		$("#counter-window").show('fast');
+		$("#info-window").hide('fast');
+		$("#help-window").hide('fast');
+	})
+	$("#info-tab").click(function(){
+		$("#counter-window").hide('fast');
+		$("#info-window").show('fast');
+		$("#help-window").hide('fast');
+	})
+	$("#help-tab").click(function(){
+		$("#counter-window").hide('fast');
+		$("#info-window").hide('fast');
+		$("#help-window").show('fast');
+	})
 	$(".format-insert").mousedown(function(){
 		$(this).css({"padding-top":"+=5px"});
 	}).mouseup(function(){
@@ -257,4 +283,5 @@ $(document).ready(function(){
 			$(this).animate({"width":"-=10px"});
 		}
 	})
+	showWindow("info-window");
 })

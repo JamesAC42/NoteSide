@@ -1,13 +1,14 @@
 body {
 	font-family:'Ubuntu',sans-serif;
-	background-color: #00607D;
+	background-color: #434565;
 	overflow-y:hidden;
 }
 .sidebar-nav{
 	position:fixed;
 	left:0;
 	height:10vh;
-	top:6vh;
+	min-height: 100px;
+	top:4vh;
 	width:30vw;
 	z-index:5;
 	text-align:center;
@@ -31,19 +32,13 @@ body {
 .sidebar-wrapper{
 	position:fixed;
 	left:0;
-	top:17vh;
-	height:85vh;
+	top:15vh;
+	height:86vh;
 	background-color: rgba(255,255,255,0.0);
 	z-index:1;
 }
 #info-wrapper{
 	pointer-events:none;
-}
-#togglenav{
-	z-index:1000;
-	position:fixed;
-	top:10;
-	right:10;
 }
 .sidebar-window{
 	height:100%;
@@ -60,7 +55,10 @@ body {
 }
 #info-window{
 	pointer-events:all;
-	display:none;
+}
+#help-window{
+}
+#counter-window{
 }
 .sidebar-tab {
 	height:50px;
@@ -81,19 +79,6 @@ body {
 	float:left;
 	border-left: 20px solid #6074C7;
 	cursor:pointer;
-}
-#counter-pointer{
-	margin-top:35vh;
-}
-#info-pointer{
-	margin-top:50vh;
-}
-#counter-tab{
-	margin-top:35vh;
-}
-#info-tab{
-	margin-top:50vh;
-	pointer-events:all;
 }
 .container{
 	width:100%;
@@ -157,7 +142,7 @@ body {
 }
 #stat-div{
 	width:90%;
-	height:80%;
+	height:85%;
 	margin:0 auto;
 	margin-top:30px;
 	padding:15px;
@@ -382,7 +367,7 @@ input{
 	font-size:16px;
 	width:70vw;
 	margin-top:30px;
-	height:96vh;
+	height:98vh;
 	resize:none;
 	padding:50px;
 	line-height: 1em;
@@ -391,4 +376,5 @@ input{
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+    z-index:100;
 }
