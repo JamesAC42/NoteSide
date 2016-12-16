@@ -5,7 +5,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Dosis|Eczar|Share+Tech+Mono|Ubuntu|Ubuntu+Mono" rel="stylesheet">
 	<script src="./js/wordcount.js"></script>
 	<title>Create Note</title>
-	<link href="./css/textarea.css" rel="stylesheet">
+	<link href="./css/textarea2.css" rel="stylesheet">
 	<link href="./css/navbar.css" rel="stylesheet">
 	<script src="./js/navbar.js"></script>
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -20,8 +20,24 @@
 	  ga('send', 'pageview');
 	</script>
 </head>
-
 <body>
+<div class="navbar-div">
+	<ul class="navbar left">
+		<li><a id="nav-header" href="./"><strong>Noteside</strong></a></li>
+		<li><a id="create-btn" href="./create">&#9998;</a></li>
+	</ul>
+	<ul class="navbar right" id="rightNav">
+		<li class="icon">
+			<a href="javascript:void(0);" onclick="showNav()">&#9776;</a>
+		</li>
+		<li><a href="./notes.php">Notebook</a></li>
+	</ul>
+</div>
+<div class="sidebar-nav">
+	<div class="sidebar-nav-tab">100,000,000</div>
+	<div class="sidebar-nav-tab">&#9881;</div>
+	<div class="sidebar-nav-tab">?</div>
+</div>
 <div class="sidebar-wrapper" id="counter-wrapper">
 	<div class="sidebar-window" id="counter-window">
 		<div class="window-container">
@@ -33,7 +49,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="sidebar-tab" id="counter-tab"><strong>0</strong></div><div id="counter-pointer" class="pointer-end-tab"></div>	
 </div>
 <div class="sidebar-wrapper" id="info-wrapper"><!--none-->
 	<div class="sidebar-window" id="info-window"><!--default-->
@@ -76,7 +91,7 @@
 						</div>
 					</div>
 				<div id="error-row">
-						<span id="error-text"><?php echo $error; ?></span>
+						<span id="error-text"></span>
 				</div>
 				</form>
 			</div>
@@ -168,13 +183,118 @@
 					</div>
 				</div>
 			</div>
-			<div></div>
 		</div>
 	</div>
-	<div class="sidebar-tab" id="info-tab">General</div><div id="info-pointer" class="pointer-end-tab"></div><!--default-->
+	<div class="sidebar-window" id="counter-window">
+		<div class="window-container">
+			<div class="header-div">
+				<span class="sidebar-head" id="counter-head"><strong>Word Count</strong></span>
+			</div>
+			<div id="stat-div">
+				<div class="stat-entry"><span class="no-text">Type Something!</span></div>
+			</div>
+		</div>
+	</div>
 </div>
-<div class="container">
-	<h1>Create</h1><hr>
+<div class="sidebar-wrapper" id="help-wrapper">
+	<div class="sidebar-window" id="help-window">
+		<div class="window-container">
+			<div class="header-div">
+				<span class="sidebar-head" id="help-head"><strong>Help</strong></span>
+			</div>
+			<div class="window-inner-div">
+				<p>This app allows you to format your note using Markdown, which is parsed when your page is generated.</p>
+				<h3>Key</h3>
+				<p>What you type:</p>
+				<div class="markdown-demo-code">
+					<pre>
+# Big Header
+
+## Smaller Header
+
+...
+
+###### Smallest Header</pre>
+				</div>
+				<p>What shows up:</p>
+				<div class="markdown-demo-result">
+					<h1>Big Header</h1>
+					<h2>Smaller Header</h2>
+					<h6>Smallest Header</h6>
+				</div><br>
+				<div class="markdown-demo-code">
+					<pre>**Bold**</pre>
+				</div>
+				<div class="markdown-demo-result">
+					<strong>Bold</strong>
+				</div>
+				<div class="markdown-demo-code">
+					<pre>*Italics*</pre>
+				</div>
+				<div class="markdown-demo-result">
+					<em>Italics</em>
+				</div>
+				<div class="markdown-demo-code">
+					<pre>
+- An
+- Unordered
+- List</pre>
+				</div>
+				<div class="markdown-demo-result">
+					<ul>
+						<li>An</li>
+						<li>Unordered</li>
+						<li>List</li>
+					</ul>
+				</div>
+				<div class="markdown-demo-code">
+					<pre>
+[A hyperlink](https://www.noteside.com)</pre>
+				</div>
+				<div class="markdown-demo-result">
+					<a href="https://www.noteside.com" class="markdown-demo-anchor">A hyperlink</a>
+				</div>
+				<div class="markdown-demo-code">
+					<pre>~~Delete~~</pre>
+				</div>
+				<div class="markdown-demo-result">
+					<del>Delete</del>
+				</div>
+				<div class="markdown-demo-code">
+					<pre>
+> You'd be in jail</pre>
+				</div>
+				<div class="markdown-demo-result">
+					<blockquote class="markdown-demo-blockquote">You'd be in jail</blockquote>
+				</div>
+				<div class="markdown-demo-code">
+					<pre>
+An inline `code block` denoted by backticks.</pre>
+				</div>
+				<div class="markdown-demo-result">
+					An inline <code class="markdown-demo-inlinecode">code block</code> denoted by backticks.
+				</div>
+				<div class="markdown-demo-code">
+					<pre>
+    // Code block indented by 4 spaces
+    public int makeNote(int number){
+        return number + 2;
+        // Subtract -2 from number
+    }</pre>
+				</div>
+				<div class="markdown-demo-result">
+					<pre class="markdown-demo-code codeblock-result">
+// Code block indented by 4 spaces
+public int makeNote(int number){
+    return number + 2;
+    // Subtract -2 from number		
+}</pre>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<!--
 	<div id="format-bar-div">
 		<ul id="format_bar">
 			<div id="header-outer-ctrl">
@@ -195,16 +315,12 @@
 			<li class="format-li"><a id="bullet" class="format-insert" onclick="insertForm('\n\n- ')">Bullet</a></li>
 			<li class="format-li"><a id="list" class="format-insert" onclick="insertForm('\n\n1. ')">List</a></li>
 			<li class="format-li"><a id="quote" class="format-insert" onclick="insertForm('\n\n> ')">Quote</a></li>
-			<li class="format-li"><a id="link" class="format-insert" onclick="insertLink()">Link</a></li>][[]]
+			<li class="format-li"><a id="link" class="format-insert" onclick="insertLink()">Link</a></li>
 			<li class="format-li"><a id="inline-code" class="format-insert" onclick="insertForm('`code`')">Inline Code</a></li>
 			<li class="format-li"><a id="code-block" class="format-insert" onclick="insertForm('\n\n\    codeblocks are indented by 4 spaces')">Code Block</a></li>
 		</ul>
-	</div>
-	<textarea name="note-content" id="text_area" form="submit-note" required></textarea>
-</div>
+	</div>-->
+	<textarea name="note-content" id="text_area" form="submit-note" placeholder="Type here..." required></textarea>
 <script src="./js/edittextarea.js"></script>
-<script src="./js/textarea.js"></script>
-</body>}{
-	][]
-}}
-{][[]]}
+<script src="./js/textarea2.js"></script>
+</body>

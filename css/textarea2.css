@@ -1,14 +1,38 @@
 body {
 	font-family:'Ubuntu',sans-serif;
 	background-color: #00607D;
+	overflow-y:hidden;
 }
-h1 {
-	color:#E0F0F9;
+.sidebar-nav{
+	position:fixed;
+	left:0;
+	height:10vh;
+	top:6vh;
+	width:30vw;
+	z-index:5;
+	text-align:center;
+	color:#FFFFFF;
+	display:table;
+}
+.sidebar-nav-tab{
+	display:table-cell;
+	width:30%;
+	height:100%;
+	line-height:10vh;
+	margin:0;
+	border-bottom:4px solid #5FFEDA;
+	background-color:#434565;
+	transition:all ease-in-out 0.3s;
+}
+.sidebar-nav-tab:hover{
+	border-bottom:10px solid #5FFEDA;
+	background-color:#6A6D9C;
 }
 .sidebar-wrapper{
-	position:absolute;
-	margin-left:-15px;
-	height:95vh;
+	position:fixed;
+	left:0;
+	top:17vh;
+	height:85vh;
 	background-color: rgba(255,255,255,0.0);
 	z-index:1;
 }
@@ -22,13 +46,13 @@ h1 {
 	right:10;
 }
 .sidebar-window{
-	height:90%;
+	height:100%;
 	margin-top:100px;
-	width:31vw;
+	width:30vw;
 	background-color: #F0F2F9;
 	float:left;
-	margin-top:-2px;
-	padding-top: 30px;
+	margin-top:-10px;
+	padding-top: 5px;
 	overyflow-y:scroll;
 }
 .sidebar-window::-webkit-scrollbar { 
@@ -36,6 +60,7 @@ h1 {
 }
 #info-window{
 	pointer-events:all;
+	display:none;
 }
 .sidebar-tab {
 	height:50px;
@@ -80,7 +105,7 @@ h1 {
 	width:90%;
 	margin:0 auto;
 	padding:15px;
-	padding-top:30px;
+	padding-top:40px;
 	overflow-y:scroll;
 }
 .window-container::-webkit-scrollbar { 
@@ -94,15 +119,51 @@ h1 {
 	font-size:28px;
 	color:#031B4F;
 }
+.help-window-desc{
+	margin:0 auto;
+}
+.markdown-demo-code{
+	background-color:#0E2041;
+	color:#07B803;
+	font-size:14px;
+	padding:10 20;
+	margin-top:10px;
+	margin-bottom:0;
+}
+.markdown-demo-result{
+	background-color:#A6ADC3;
+	color:#031139;
+	font-size:16px;
+	padding:20 20;
+	margin:0;
+}
+.markdown-demo-anchor{
+	text-decoration:none;
+	color:#1B494D;
+}
+.markdown-demo-blockquote{
+	background-color:#EFEFEF;
+	border-left: 10px solid #494B5B;
+	margin: 1.5em 10px;
+ 	padding: 0.5em 10px;
+}
+.markdown-demo-inlinecode{
+	background-color:#0E2041;
+	color:#07B803;
+	padding:0 7;
+}
+.codeblock-result{
+	width:90%;
+}
 #stat-div{
 	width:90%;
-	height:85%;
+	height:80%;
 	margin:0 auto;
 	margin-top:30px;
 	padding:15px;
 	overflow-y:scroll;
 	overflow-x:scroll;
-	border:1px solid black;
+	border:1px solid #A6A6A6;
 	background-color:#fbfbfb;
 }
 #stat-div::-webkit-scrollbar { 
@@ -138,7 +199,7 @@ h1 {
 	width:90%;
 	margin:0 auto;
 	padding: 15px;
-	margin-top:30px;
+	margin-top:10px;
 }
 
 #form-submit-div{
@@ -314,14 +375,20 @@ input{
 	text-align:left
 }
 #text_area{
-	position:absolute;
+	position:fixed;
 	right:0;
+	top:0;
 	font-family:'Ubuntu Mono', sans-serif;
 	font-size:16px;
 	width:70vw;
 	margin-top:30px;
-	height:95vh;
+	height:96vh;
 	resize:none;
 	padding:50px;
 	line-height: 1em;
+	border: none;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
 }
