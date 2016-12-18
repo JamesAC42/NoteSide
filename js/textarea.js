@@ -140,6 +140,14 @@ function wipeEditor(){
 		$("#text_area").val("");
 	}
 }
+
+function togglesidebarnav(){
+	if($("#counter-window").css("display") == "initial"){
+		$("#counter-window").css("display", "none");
+	}else{
+		$("#counter-window").css("display", "initial");
+	}
+}
 window.onload = function startSave(){
 	autoSaveInterval();
 }
@@ -210,18 +218,9 @@ $(document).ready(function(){
 			$( this ).next( ".header-insert" ).animate({width:'toggle'},150, showNext );
 		});
 	})
-	$(".sidebar-window").each(function() {
+	/*$(".sidebar-window").each(function() {
 		$(this).animate({width:'toggle'},50);
-	});
-	$("#counter-tab").click(function(){
-		$(this).parent().find(".sidebar-window").animate({width:'toggle'},200).animate({width:'-=40px'},80).animate({width:'+=40px'},60).animate({width:'-=20px'},40).animate({width:'+=20px'},10);
-		$("#info-tab").animate({opacity: 'toggle'},60);
-		toggleSidebar();
-	});
-	$("#info-tab").click(function(){
-		$(this).parent().find(".sidebar-window").animate({width:'toggle'},200).animate({width:'-=40px'},80).animate({width:'+=40px'},60).animate({width:'-=20px'},40).animate({width:'+=20px'},10);
-		toggleSidebar();
-	});
+	});*/
 	$("#fontfamily-select, #fontsize-select, #spacing-select").change(function(){
 		updateFontSetting();
 	});
@@ -230,7 +229,33 @@ $(document).ready(function(){
 	}).mouseup(function(){
 		$(this).css({"margin-top":"-=5px"});
 	})
-
+	var windows = ["#counter-window","#info-window","#help-window"];
+	function showWindow(showthis){
+		$(showthis).show('fast');
+		for(var ws in windows){
+			if(!ws == showthis){
+				$(ws).hide('fast');
+			}
+		}
+	}
+	$("#counter-tab").click(function(){
+		$("#counter-wrapper").removeClass("hidden-sidebar")
+		$(".active-sidebar").removeClass("active-sidebar");
+		$(this).addClass("active-sidebar");
+		$("#help-wrapper, #info-wrapper").addClass("hidden-sidebar");
+	})
+	$("#info-tab").click(function(){
+		$("#info-wrapper").removeClass("hidden-sidebar")
+		$(".active-sidebar").removeClass("active-sidebar");
+		$(this).addClass("active-sidebar");
+		$("#help-wrapper, #counter-wrapper").addClass("hidden-sidebar");
+	})
+	$("#help-tab").click(function(){
+		$("#help-wrapper").removeClass("hidden-sidebar")
+		$(".active-sidebar").removeClass("active-sidebar");
+		$(this).addClass("active-sidebar");
+		$("#counter-wrapper, #info-wrapper").addClass("hidden-sidebar");
+	})
 	$(".format-insert").mousedown(function(){
 		$(this).css({"padding-top":"+=5px"});
 	}).mouseup(function(){
@@ -249,4 +274,5 @@ $(document).ready(function(){
 			$(this).animate({"width":"-=10px"});
 		}
 	})
+	showWindow("info-window");
 })

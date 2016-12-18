@@ -1,4 +1,4 @@
-<head>
+<?php include 'hidden/createnote.php'; ?><head>
 	<meta charset="utf-8">
 	<meta author="jamesac">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -8,7 +8,7 @@
 	<link href="./css/textarea.css" rel="stylesheet">
 	<link href="./css/navbar.css" rel="stylesheet">
 	<script src="./js/navbar.js"></script>
-	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="./images/favicon.ico" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -20,9 +20,14 @@
 	  ga('send', 'pageview');
 	</script>
 </head>
-
 <body>
-<div class="sidebar-wrapper" id="counter-wrapper">
+<?php include 'navbar.php'; ?>
+<div class="sidebar-nav">
+	<div class="sidebar-nav-tab" id="counter-tab"><div class="sidebar-nav-tab-inner" id="counter-tab-inner">0</div></div>
+	<div class="sidebar-nav-tab active-sidebar" id="info-tab"><div class="sidebar-nav-tab-inner" id="info-tab-inner">&#9881;</div></div>
+	<div class="sidebar-nav-tab" id="help-tab"><div class="sidebar-nav-tab-inner" id="help-tab-inner">?</div></div>
+</div>
+<div class="sidebar-wrapper hidden-sidebar" id="counter-wrapper">
 	<div class="sidebar-window" id="counter-window">
 		<div class="window-container">
 			<div class="header-div">
@@ -33,7 +38,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="sidebar-tab" id="counter-tab"><strong>0</strong></div><div id="counter-pointer" class="pointer-end-tab"></div>	
 </div>
 <div class="sidebar-wrapper" id="info-wrapper"><!--none-->
 	<div class="sidebar-window" id="info-window"><!--default-->
@@ -57,13 +61,35 @@
 						<div class="col">
 							<label for="class-input">Class</label>
 							<select name="class-name" id="class-input" required>
-								
+							<?php
+								$sqlgetclasses = "SELECT * FROM user_classes WHERE username='$username';";
+								$getclasses = mysql_query($sqlgetclasses);
+								if(mysql_num_rows($getclasses) == 0){
+									echo "<option disabled>You have no classes!</option>";
+								}else{
+									while ($class = mysql_fetch_assoc($getclasses)) {
+										$classname = $class['classname'];
+										echo '<option value="' . $classname . '">' . $classname . '</option>';
+									}
+								}
+							  ?>
 							</select>
 						</div>
 						<div class="col">
 							<label for="teacher-input">Teacher</label>
 							<select name="teacher-name" id="teacher-input" required>
-								
+								<?php
+									$sqlgetteachers = "SELECT * FROM user_teachers WHERE username='$username';";
+									$getteachers = mysql_query($sqlgetteachers);
+									if(mysql_num_rows($getteachers) == 0){
+										echo "<option disabled>You have no teachers!</option>";
+									}else{
+										while ($teacher = mysql_fetch_assoc($getteachers)) {
+											$teachername = $teacher['teacher'];
+											echo '<option value="' . $teachername . '">' . $teachername . '</option>';
+										}
+									}
+								  ?>
 							</select>
 						</div>
 					</div>
@@ -168,43 +194,107 @@
 					</div>
 				</div>
 			</div>
-			<div></div>
 		</div>
 	</div>
-	<div class="sidebar-tab" id="info-tab">General</div><div id="info-pointer" class="pointer-end-tab"></div><!--default-->
 </div>
-<div class="container">
-	<h1>Create</h1><hr>
-	<div id="format-bar-div">
-		<ul id="format_bar">
-			<div id="header-outer-ctrl">
-				<li id="headers-toggle" class="dropdown format-li">
-					<a href="#" class="dropbtn">Headers</a></li>
-				<li id="header-content format-li">
-					<div class="headers-div" id="headers-div"><ul>
-						<li class="header-insert"><a id="header1"  class="format-insert" onclick="insertForm('\n\n# ')" href="#">H1</a></li>
-						<li class="header-insert"><a id="header2"  class="format-insert" onclick="insertForm('\n\n## ')" href="#">H2</a></li>
-						<li class="header-insert"><a id="header3"  class="format-insert" onclick="insertForm('\n\n### ')" href="#">H3</a></li>
-						<li class="header-insert"><a id="header4"  class="format-insert" onclick="insertForm('\n\n#### ')" href="#">H4</a></li>
-						<li class="header-insert"><a id="header5"  class="format-insert" onclick="insertForm('\n\n##### ')" href="#">H5</a></li>
-						<li class="header-insert"><a id="header6"  class="format-insert" onclick="insertForm('\n\n###### ')" href="#">H6</a></li>
-					</ul></div>
-				</li>
+<div class="sidebar-wrapper hidden-sidebar" id="help-wrapper">
+	<div class="sidebar-window" id="help-window">
+		<div class="window-container">
+			<div class="header-div">
+				<span class="sidebar-head" id="help-head"><strong>Help</strong></span>
 			</div>
-			<li class="format-li"><a id="bold"   class="format-insert" onclick="insertForm('*bold*')">Bold</a></li>
-			<li class="format-li"><a id="bullet" class="format-insert" onclick="insertForm('\n\n- ')">Bullet</a></li>
-			<li class="format-li"><a id="list" class="format-insert" onclick="insertForm('\n\n1. ')">List</a></li>
-			<li class="format-li"><a id="quote" class="format-insert" onclick="insertForm('\n\n> ')">Quote</a></li>
-			<li class="format-li"><a id="link" class="format-insert" onclick="insertLink()">Link</a></li>][[]]
-			<li class="format-li"><a id="inline-code" class="format-insert" onclick="insertForm('`code`')">Inline Code</a></li>
-			<li class="format-li"><a id="code-block" class="format-insert" onclick="insertForm('\n\n\    codeblocks are indented by 4 spaces')">Code Block</a></li>
-		</ul>
+			<div class="window-inner-div">
+				<p>This app allows you to format your note using Markdown, which is parsed when your page is generated.</p>
+				<h3>Key</h3>
+				<p>What you type:</p>
+				<div class="markdown-demo-code">
+					<pre>
+# Big Header
+
+## Smaller Header
+
+...
+
+###### Smallest Header</pre>
+				</div>
+				<p>What shows up:</p>
+				<div class="markdown-demo-result">
+					<h1>Big Header</h1>
+					<h2>Smaller Header</h2>
+					<h6>Smallest Header</h6>
+				</div><br>
+				<div class="markdown-demo-code">
+					<pre>**Bold**</pre>
+				</div>
+				<div class="markdown-demo-result">
+					<strong>Bold</strong>
+				</div>
+				<div class="markdown-demo-code">
+					<pre>*Italics*</pre>
+				</div>
+				<div class="markdown-demo-result">
+					<em>Italics</em>
+				</div>
+				<div class="markdown-demo-code">
+					<pre>
+- An
+- Unordered
+- List</pre>
+				</div>
+				<div class="markdown-demo-result">
+					<ul>
+						<li>An</li>
+						<li>Unordered</li>
+						<li>List</li>
+					</ul>
+				</div>
+				<div class="markdown-demo-code">
+					<pre>
+[A hyperlink](https://www.noteside.com)</pre>
+				</div>
+				<div class="markdown-demo-result">
+					<a href="https://www.noteside.com" class="markdown-demo-anchor">A hyperlink</a>
+				</div>
+				<div class="markdown-demo-code">
+					<pre>~~Delete~~</pre>
+				</div>
+				<div class="markdown-demo-result">
+					<del>Delete</del>
+				</div>
+				<div class="markdown-demo-code">
+					<pre>
+> You'd be in jail</pre>
+				</div>
+				<div class="markdown-demo-result">
+					<blockquote class="markdown-demo-blockquote">You'd be in jail</blockquote>
+				</div>
+				<div class="markdown-demo-code">
+					<pre>
+An inline `code block` denoted by backticks.</pre>
+				</div>
+				<div class="markdown-demo-result">
+					An inline <code class="markdown-demo-inlinecode">code block</code> denoted by backticks.
+				</div>
+				<div class="markdown-demo-code">
+					<pre>
+    // Code block indented by 4 spaces
+    public int makeNote(int number){
+        return number + 2;
+        // Subtract -2 from number
+    }</pre>
+				</div>
+				<div class="markdown-demo-result">
+					<pre class="markdown-demo-code codeblock-result">
+// Code block indented by 4 spaces
+public int makeNote(int number){
+    return number + 2;
+    // Subtract -2 from number		
+}</pre>
+				</div>
+			</div>
+		</div>
 	</div>
-	<textarea name="note-content" id="text_area" form="submit-note" required></textarea>
 </div>
+	<textarea name="note-content" id="text_area" form="submit-note" placeholder="Type here..." required></textarea>
 <script src="./js/edittextarea.js"></script>
-<script src="./js/textarea.js"></script>
-</body>}{
-	][]
-}}
-{][[]]}
+</body>

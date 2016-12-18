@@ -104,7 +104,7 @@ function countW(inputp){
 		stat += word + ": " + f +  " (" + string_amt + ") | " + b + "\n\n";
 	};*/
 
-	$("#counter-tab").text(amountW);
+	$("#counter-tab-inner").text(amountW);
 	$('#stat-div').empty();
 	if(amountW === 0){
 		$('#stat-div').append('<div class="stat-entry"><span class="no-text">You haven\'t typed anything.</span></div>');
