@@ -41,10 +41,15 @@ body {
 .sidebar-wrapper{
 	position:fixed;
 	left:0;
-	top:16vh;
-	height:86vh;
+	top:14vh;
+	height:87vh;
 	background-color: rgba(255,255,255,0.0);
 	z-index:1;
+}
+@media (max-width:600){
+	.sidebar-wrapper{
+		padding-top:15px;
+	}
 }
 .hidden-sidebar{
 	transform: translate(-30vw);

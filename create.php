@@ -55,7 +55,7 @@
 							<input name="note-title" id="title-input" type="text" required></input>
 						</div>
 						<div class="col">
-							<label for="section-input">Chapter/ Section</label>
+							<label for="section-input">Section</label>
 							<input name="section-name" id="section-input" type="text" required>
 						</div>
 					</div>
