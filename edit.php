@@ -3,12 +3,12 @@
 	<meta author="jamesac">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Dosis|Eczar|Share+Tech+Mono|Ubuntu|Ubuntu+Mono" rel="stylesheet">
-	<link href="./css/navbar.css" rel="stylesheet">
-	<script src="./navbar.js"></script>
-	<script src="./js/wordcount.js"></script>
+	<link href="/css/navbar.css" rel="stylesheet">
+	<script src="/navbar.js"></script>
+	<script src="/js/wordcount.js"></script>
 	<title>Edit Note</title>
-	<link href="./css/textarea.css" rel="stylesheet">
-	<script src="./js/textarea.js"></script>
+	<link href="/css/textarea.css" rel="stylesheet">
+	<script src="/js/textarea.js"></script>
 	<link rel="icon" href="./images/favicon.ico" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<script>
@@ -297,5 +297,5 @@ public int makeNote(int number){
 	</div>
 </div>
 	<textarea name="note-content" id="text_area" form="submit-note" placeholder="Type here..." required><?php echo htmlspecialchars($filecontents); ?></textarea></textarea>
-<script src="./js/edittextarea.js"></script>
+<script src="/js/edittextarea.js"></script>
 </body>
