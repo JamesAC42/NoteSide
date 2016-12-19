@@ -9,7 +9,7 @@
 	<title>Edit Note</title>
 	<link href="/css/textarea.css" rel="stylesheet">
 	<script src="/js/textarea.js"></script>
-	<link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
