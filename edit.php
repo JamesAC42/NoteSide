@@ -4,7 +4,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Dosis|Eczar|Share+Tech+Mono|Ubuntu|Ubuntu+Mono" rel="stylesheet">
 	<link href="/css/navbar.css" rel="stylesheet">
-	<script src="/navbar.js"></script>
+	<script src="/js/navbar.js"></script>
 	<script src="/js/wordcount.js"></script>
 	<title>Edit Note</title>
 	<link href="/css/textarea.css" rel="stylesheet">
